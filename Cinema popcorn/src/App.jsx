@@ -1,17 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import NavbarComp from './components/NavbarComp';
-
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavbarComp from "./components/NavbarComp";
+import  TaskList  from "./TaskList";
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div className="App">
-     <NavbarComp />
-    </div>
-  )
+<><h1>jsx</h1></>
 }
 
-export default App
+export default App;
