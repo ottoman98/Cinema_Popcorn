@@ -6,11 +6,19 @@ import Navbar from "react-bootstrap/Navbar";
 import { GoRocket } from "react-icons/go";
 import { BsSearch } from "react-icons/bs";
 import Stack from "react-bootstrap/Stack";
-
-
+import { Outlet, Link } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import Home from "../routes/Home"
 function NavBar() {
+  const router = createBrowserRouter([
+    {
+      path:"/home",
+      element:<Home />
+    }
+  ])
   return (
     <Stack gap={4}>
+          <RouterProvider router={router} />
       <Navbar expand="lg" style={{ background: " #a4fbe3" }}>
         <Container className="d-flex justify-content-around">
           <Navbar.Brand href="#">
@@ -24,10 +32,10 @@ function NavBar() {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action1" style={{ margin: "10px 0 0 100px" }}>
+              <Link to={`home`} style={{ margin: "10px 0 0 100px" }}>
                 Inicio
-              </Nav.Link>
-              <Nav.Link href="#action2" style={{ margin: "10px 0 0 100px" }}>
+              </Link>
+              <Nav.Link href="" style={{ margin: "10px 0 0 100px" }}>
                 Peliculas
               </Nav.Link>
 

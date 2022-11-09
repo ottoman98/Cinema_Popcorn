@@ -1,18 +1,29 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import NavBar from "./components/NavBar";
-import LayOut from "./components/LayOut";
-import { Button } from "react-bootstrap";
 
+import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import ErrorPage from "./ErrorPage";
+import Home from "../src/routes/Home.jsx"
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "home/",
+      element: <Home />,
+      // element: <Root />,
+      errorElement: <ErrorPage />,
+    },
+  
+  ]);
   return (
     <div className="App">
+      {/*    
       <header>
         <NavBar />
       </header>
       <main>
         <LayOut />
-      </main>
+      </main> */}
+      <RouterProvider router={router} />
     </div>
   );
 }
